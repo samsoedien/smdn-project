@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "smdn-project",
+  "version": "1.0.0",
+  "description": "Fullstack web application using react frontend and express backend",
+  "main": "index.js",
+  "repository": "https://github.com/samsoedien/smdn-project.git",
+  "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
+  "license": "MIT"
+}
