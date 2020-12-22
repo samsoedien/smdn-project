@@ -6,5 +6,16 @@
   "main": "index.js",
   "repository": "https://github.com/samsoedien/smdn-project.git",
   "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "commitlint": "^11.0.0",
+    "husky": "^4.3.6"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+    }
+  }
 }
