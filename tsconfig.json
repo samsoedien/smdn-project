@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false,
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "removeComments": false,
+    "strict": true,
+    "target": "es2015",
+    "useDefineForClassFields": false,
+    "declarationMap": true,
+    "typeRoots": ["**/node_modules/@types"]
+  },
+  "include": ["./packages/**/*"],
+  "exclude": ["**/node_modules/*", "**/*.stories.*", "**/*.test.*"],
+  "files": [],
+  "references": [
+    {
+      "path": "packages/client"
+    },
+    {
+      "path": "packages/server"
+    },
+    {
+      "path": "packages/common"
+    }
+  ]
+}
