@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1"
+  }
+}
