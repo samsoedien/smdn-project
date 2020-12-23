@@ -7,11 +7,20 @@
   "repository": "https://github.com/samsoedien/smdn-project.git",
   "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
   "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn lerna run start --stream",
+    "build": "yarn lerna run build --stream"
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "commitlint": "^11.0.0",
+    "cross-env": "^7.0.3",
     "husky": "^4.3.6",
+    "lerna": "^3.22.1",
     "typescript": "^4.1.3"
   },
   "husky": {

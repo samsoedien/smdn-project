@@ -1,10 +1,16 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "name": "@smdn-project/server",
+  "version": "0.1.0",
+  "description": "Rest API Express Backend application",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "start:prod": "cross-env NODE_ENV=production & node dist/index.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@smdn-project/common": "0.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6",
