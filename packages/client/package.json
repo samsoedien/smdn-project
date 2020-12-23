@@ -1,7 +1,17 @@
 {
   "name": "@smdn-project/client",
   "version": "0.1.0",
-  "private": true,
+  "description": "React frontend application",
+  "keywords": [],
+  "repository": "https://github.com/samsoedien/smdn-project/tree/master/packages/client",
+  "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@smdn-project/common": "0.1.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -21,12 +31,7 @@
     "react-app-rewire-yarn-workspaces": "^1.0.3",
     "react-app-rewired": "^2.1.8"
   },
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
-  },
+
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -44,5 +49,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

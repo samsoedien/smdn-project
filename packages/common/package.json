@@ -2,6 +2,7 @@
   "name": "@smdn-project/common",
   "version": "0.1.0",
   "description": "Shared functions & utils",
+  "keywords": [],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": "https://github.com/samsoedien/smdn-project/tree/master/packages/shared",
