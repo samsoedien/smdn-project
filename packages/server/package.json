@@ -13,9 +13,13 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@smdn-project/common": "0.1.0"
+    "@smdn-project/common": "0.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/node": "^14.14.16",
     "nodemon": "^2.0.6",
     "ts-node": "^9.1.1"
   }
