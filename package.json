@@ -13,7 +13,9 @@
   "scripts": {
     "start": "yarn lerna run start --stream",
     "build": "yarn lerna run build --stream",
-    "lint": "eslint \"./packages/**/*.{js,jsx,ts,tsx}\""
+    "lint": "yarn lint:scripts && yarn lint:styles",
+    "lint:scripts": "eslint \"./packages/**/*.{js,jsx,ts,tsx}\"",
+    "lint:styles": "stylelint ./packages/**/*.{css,scss,tsx}"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -33,6 +35,13 @@
     "husky": "^4.3.6",
     "lerna": "^3.22.1",
     "lint-staged": "^10.5.3",
+    "stylelint": "^13.8.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
     "typescript": "^4.1.3"
   },
   "husky": {
@@ -43,7 +52,13 @@
   },
   "lint-staged": {
     "./packages/**/*.{js,jsx,ts,tsx}": [
-      "yarn --silent lint --fix"
+      "yarn --silent lint:scripts --fix"
+    ],
+    "./packages/**/*.{css,scss}": [
+      "yarn --silent lint:styles --fix"
+    ],
+    "./packages/**/*.{tsx}": [
+      "yarn --silent lint:styles"
     ]
   }
 }
