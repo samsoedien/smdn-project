@@ -12,7 +12,13 @@
   ],
   "scripts": {
     "start": "yarn lerna run start --stream",
+    "server": "yarn lerna run start --stream --scope @smdn-project/server",
+    "client": "yarn lerna run start --stream --scope @smdn-project/client",
+    "dev": "concurrently \"yarn client\" \"yarn server\"",
+    "bootstrap": "yarn lerna bootstrap",
     "build": "yarn lerna run build --stream",
+    "build:common": "yarn lerna run build --scope @smdn-project/common",
+    "clean": "yarn lerna clean --yes",
     "lint": "yarn lint:scripts && yarn lint:styles",
     "lint:scripts": "eslint \"./packages/**/*.{js,jsx,ts,tsx}\"",
     "lint:styles": "stylelint ./packages/**/*.{css,scss,tsx}"
@@ -23,6 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
     "commitlint": "^11.0.0",
+    "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.16.0",
     "eslint-config-airbnb": "^18.2.1",
