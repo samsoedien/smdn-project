@@ -1,4 +1,5 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compileOnSave": true,
   "compilerOptions": {
     "declarationDir": "dist",
@@ -13,7 +14,6 @@
     "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["dist", "tests", "**/*.test.*", "**/*.stories.*"],
-  "extends": "../../tsconfig.json",
   "include": ["src/**/*"],
   "references": []
 }
