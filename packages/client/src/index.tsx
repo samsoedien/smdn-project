@@ -1,16 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.css'
 
-import './index.scss'
-import App from './app'
 import * as serviceWorker from './serviceWorker'
 import reportWebVitals from './reportWebVitals'
+import store from './store/store'
+import App from './app'
+import './index.scss'
 
-import 'bootstrap/dist/css/bootstrap.css'
+const Root = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>,
   document.getElementById('root'),
 )

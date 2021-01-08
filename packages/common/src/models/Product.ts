@@ -1,7 +1,9 @@
 export interface IProduct {
+  id: number
   name: string
 }
 
 export const product: IProduct = {
-  name: 'product1' 
+  id: 1,
+  name: 'product1',
 }
