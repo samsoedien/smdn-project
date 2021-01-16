@@ -14,6 +14,7 @@
     "start": "yarn lerna run start --stream",
     "server": "yarn lerna run start --stream --scope @smdn-project/server",
     "client": "yarn lerna run start --stream --scope @smdn-project/client",
+    "desktop": "yarn lerna run start --stream --scope @smdn-project/desktop",
     "dev": "concurrently \"yarn client\" \"yarn server\"",
     "bootstrap": "yarn lerna bootstrap",
     "build": "yarn lerna run build --stream",

@@ -1,0 +1,19 @@
+{
+  "name": "@smdn-project/desktop",
+  "version": "0.1.0",
+  "description": "Desktop electron application ported from client",
+  "keywords": [],
+  "main": "dist/main.js",
+  "typings": "dist/index.d.js",
+  "repository": "https://github.com/samsoedien/smdn-project/tree/master/packages/desktop",
+  "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc",
+    "compile": "tsc --watch" 
+  },
+  "devDependencies": {
+    "electron": "^11.2.0"
+  }
+}
