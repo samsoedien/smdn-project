@@ -1,4 +1,5 @@
 import { RequestHandler } from 'express'
+import { validationResult } from 'express-validator'
 
 import ProductModel from '../models/Product.model'
 
@@ -25,6 +26,12 @@ export const getProductById: RequestHandler = async (req, res, next) => {
 export const postProduct: RequestHandler = async (req, res, next) => {
   try {
     console.log(req.body)
+
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() })
+    }
+
     const product = await ProductModel.create(req.body)
 
     return res.status(201).json({ message: 'success', data: product })

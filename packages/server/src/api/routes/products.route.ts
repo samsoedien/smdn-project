@@ -1,6 +1,7 @@
 import { Router } from 'express'
 
 import * as productController from '../controllers/products.controller'
+import productValidation from '../validation/products.validation'
 
 const router = Router()
 
@@ -8,7 +9,7 @@ router.get('', productController.getProducts)
 
 router.get('/:id', productController.getProductById)
 
-router.post('/', productController.postProduct)
+router.post('/', [productValidation], productController.postProduct)
 
 router.put('/:id', productController.updateProduct)
 
