@@ -32,6 +32,9 @@
       "path": "packages/server"
     },
     {
+      "path": "packages/desktop"
+    },
+    {
       "path": "packages/common"
     }
   ]
