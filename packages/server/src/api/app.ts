@@ -11,6 +11,7 @@ import xss from 'xss-clean'
 import cookieparser from 'cookie-parser'
 
 import productRoutes from './routes/products.route'
+import errorMiddleware from './middleware/error.middleware'
 
 dotenv.config()
 
@@ -38,5 +39,6 @@ app.use(limiter)
 app.get('/', (req: Request, res: Response) => res.send('Rest API Running.'))
 
 app.use('/api/v1/products', productRoutes)
+app.use(errorMiddleware)
 
 export default app

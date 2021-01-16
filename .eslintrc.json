@@ -25,6 +25,7 @@
     "prettier"
   ],
   "rules": {
+    "no-unused-vars": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",
