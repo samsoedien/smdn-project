@@ -1,3 +1,4 @@
+import path from 'path'
 import express, { Application, Request, Response } from 'express'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
@@ -36,9 +37,26 @@ app.use(hpp())
 app.use(cors())
 app.use(limiter)
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE')
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end()
+  }
+  return next()
+})
+
 app.get('/', (req: Request, res: Response) => res.send('Rest API Running.'))
 
 app.use('/api/v1/products', productRoutes)
 app.use(errorMiddleware)
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+  app.get('*', (req, res, next) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
 
 export default app
