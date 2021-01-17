@@ -7,13 +7,15 @@
   "repository": "https://github.com/samsoedien/smdn-project.git",
   "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
   "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": ["**/native", "**/native/**"]
+  },
   "scripts": {
     "start": "yarn lerna run start --stream",
     "server": "yarn lerna run start --stream --scope @smdn-project/server",
     "client": "yarn lerna run start --stream --scope @smdn-project/client",
+    "native": "yarn lerna run start --stream --scope @smdn-project/native",
     "dev": "concurrently \"yarn client\" \"yarn server\"",
     "bootstrap": "yarn lerna bootstrap",
     "build": "yarn lerna run build --stream",
