@@ -1,7 +1,8 @@
 {
   "name": "@smdn-project/native",
   "version": "0.1.0",
-  "dependencies": {
+  "main": "__generated__/AppEntry.js",
+    "dependencies": {
     "expo": "~40.0.0",
     "expo-status-bar": "^1.0.3",
     "react": "16.13.1",
@@ -23,7 +24,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "postinstall": "expo-yarn-workspaces postinstall"
   },
   "private": true
 }
