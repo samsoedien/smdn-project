@@ -8,8 +8,13 @@
   "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
   "license": "MIT",
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["**/native", "**/native/**"]
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/native",
+      "**/native/**"
+    ]
   },
   "scripts": {
     "start": "yarn lerna run start --stream",
