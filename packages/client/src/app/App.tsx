@@ -4,6 +4,8 @@ import styles from './App.module.scss'
 
 import { IProduct } from '@smdn-project/common'
 import Products from './features/Products'
+import Button from './components/Button'
+
 export interface IAppState {
   products: IProduct[]
 }
@@ -14,7 +16,7 @@ const App: React.FC<IAppProps> = () => {
     <div className={styles['App']}>
       <h1>React App</h1>
       <Products />
-      <button className="btn btn-primary">Button</button>
+      <Button>Click me</Button>
     </div>
   )
 }
