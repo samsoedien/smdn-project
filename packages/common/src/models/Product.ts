@@ -1,7 +1,5 @@
 export interface IProduct {
+  id: string
   name: string
-}
-
-export const product: IProduct = {
-  name: 'product1' 
+  description?: string
 }

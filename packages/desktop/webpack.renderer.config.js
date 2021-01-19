@@ -1,5 +1,5 @@
-const rules = require('./webpack.rules');
-const plugins = require('./webpack.plugins');
+const rules = require('./webpack.rules'); // eslint-disable-line
+const plugins = require('./webpack.plugins'); // eslint-disable-line
 
 rules.push({
   test: /\.css$/,
