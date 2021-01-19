@@ -7,13 +7,19 @@
   "repository": "https://github.com/samsoedien/smdn-project.git",
   "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
   "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "start": "yarn lerna run start --stream",
     "server": "yarn lerna run start --stream --scope @smdn-project/server",
     "client": "yarn lerna run start --stream --scope @smdn-project/client",
+    "native": "expo start",
+    "native:android": "expo start --android",
+    "native:ios": "expo start --ios",
+    "native:web": "expo web",
     "dev": "concurrently \"yarn client\" \"yarn server\"",
     "bootstrap": "yarn lerna bootstrap",
     "build": "yarn lerna run build --stream",
@@ -22,7 +28,8 @@
     "lint": "yarn lint:scripts && yarn lint:styles",
     "lint:scripts": "eslint \"./packages/**/*.{js,jsx,ts,tsx}\"",
     "lint:styles": "stylelint ./packages/**/*.{css,scss,tsx}",
-    "docker": "docker-compose up"
+    "docker": "docker-compose up",
+    "postinstall": "expo-yarn-workspaces check-workspace-dependencies"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -40,6 +47,7 @@
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "expo-yarn-workspaces": "^1.3.0",
     "husky": "^4.3.6",
     "lerna": "^3.22.1",
     "lint-staged": "^10.5.3",
