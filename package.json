@@ -8,14 +8,14 @@
   "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
   "license": "MIT",
   "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
+    "packages": ["packages/*"],
+    "nohoist": ["**/desktop", "**/desktop/**"]
   },
   "scripts": {
     "start": "yarn lerna run start --stream",
     "server": "yarn lerna run start --stream --scope @smdn-project/server",
     "client": "yarn lerna run start --stream --scope @smdn-project/client",
+    "desktop": "yarn lerna run start --stream --scope @smdn-project/desktop",
     "native": "expo start",
     "native:android": "expo start --android",
     "native:ios": "expo start --ios",
