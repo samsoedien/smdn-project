@@ -1,18 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from './Products.module.scss'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { IProduct } from '@smdn-project/common'
+import { RootState } from '../../../store/store'
 import ProductList from './ProductList'
+import styled from './Products.module.scss'
 
 export interface IProductsProps {}
 
-const products: IProduct[] = [
-  { id: '1', name: 'product1' },
-  { id: '2', name: 'product2', description: 'a sample description for product2' },
-]
-
 const Products: React.FC<IProductsProps> = () => {
+  const dispatch = useDispatch()
+  const products = useSelector((state: RootState) => state.products.products)
   return (
     <div className="smdn-products" data-test="products-component">
       <ProductList products={products} />

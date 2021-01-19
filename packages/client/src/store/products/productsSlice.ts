@@ -9,8 +9,12 @@ interface IProductState {
   error: string | null
 }
 
+const products: IProduct[] = [
+  { id: '1', name: 'product 1' },
+  { id: '2', name: 'product 2', description: 'a sample description for product 2' },
+]
 const productsInitialState: IProductState = {
-  products: [],
+  products,
   loading: false,
   error: null,
 }

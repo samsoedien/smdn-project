@@ -12,7 +12,6 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   return (
     <div className="smdn-product-item card" data-test="product-item-component">
       <h6>{product.name}</h6>
-      <br />
       <span>{product.description}</span>
     </div>
   )
