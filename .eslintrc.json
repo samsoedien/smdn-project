@@ -25,6 +25,23 @@
     "prettier"
   ],
   "rules": {
+    "no-unused-vars": "warn",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-filename-extension":"warn",
+    "react/style-prop-object" :"warn",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["warn"]
+
+
   },
   "settings": {
     "import/resolver": {

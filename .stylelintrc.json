@@ -9,6 +9,7 @@
   ],
   "plugins": ["stylelint-selector-bem-pattern", "stylelint-prettier"],
   "rules": {
+    "rules": { "value-keyword-case": ["lower", { "ignoreKeywords": ["dummyValue"] }] },
     "at-rule-empty-line-before": null,
     "declaration-empty-line-before": null,
     "block-no-empty": null,
