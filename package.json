@@ -46,6 +46,7 @@
     "prettier": "^2.2.1",
     "stylelint": "^13.8.0",
     "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-prettier": "^1.1.2",
