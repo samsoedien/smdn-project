@@ -63,7 +63,7 @@ export const deleteProduct: RequestHandler = async (req, res, next) => {
 
     product = await ProductModel.remove()
 
-    return res.status(200).json({ message: 'success', data: product })
+    return res.status(204).json({ message: 'success' })
   } catch (err) {
     return next(err)
   }
