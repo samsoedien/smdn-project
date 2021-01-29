@@ -1,8 +1,8 @@
 import { RequestHandler } from 'express'
 import { validationResult } from 'express-validator'
-import ProductModel from '../models/Product.model'
 
 import UserModel from '../models/User.model'
+import { userHashPasswordService, userComparePasswordService } from '../services/users.service'
 
 export const getUsers: RequestHandler = async (req, res, next) => {
   try {
@@ -61,7 +61,54 @@ export const deleteUser: RequestHandler = async (req, res, next) => {
 
   if (!user) return res.status(400).json({ message: 'Resource not found' })
 
-  user = await ProductModel.remove()
+  user = await UserModel.remove()
 
   return res.status(204).json({ message: 'success' })
+}
+
+export const registerUser: RequestHandler = async (req, res, next) => {
+  try {
+    console.log(req.body)
+
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() })
+    }
+    const hashedPassword = await userHashPasswordService(req.body.password)
+
+    const user = {
+      password: hashedPassword,
+      ...req.body,
+    }
+    // const user = await UserModel.create(req.body)
+    console.log(user)
+
+    return res.status(201).json({ message: 'Succes', data: user })
+  } catch (err) {
+    return next()
+  }
+}
+
+export const loginUser: RequestHandler = async (req, res, next) => {
+  const { email, password } = req.body
+
+  try {
+    if (!email || !password) return res.status(422).json({ errors: 'Invalid credentials' }) // TODO: Implement with express validator
+
+    const user = await UserModel.findOne({ email }).select('+password')
+
+    if (!user) return res.status(401).json({ errors: [{ msg: 'Invalid credentials' }] })
+
+    const matchPassword = userComparePasswordService(password, user.password)
+
+    if (!matchPassword) return res.status(401).json({ errors: [{ msg: 'Invalid credentials' }] })
+
+    // const token = await setAuthTokenService(user)
+    // const cookieOptions = await setCookieOptionsService()
+
+    return res.status(200)
+    // return res.status(200).cookie('token', token, cookieOptions).json({ success: true, token })
+  } catch (err) {
+    return next(err)
+  }
 }

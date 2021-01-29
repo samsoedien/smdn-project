@@ -15,4 +15,8 @@ router.put('/:id', userController.updateUser)
 
 router.delete('/:id', userController.deleteUser)
 
+router.post('/register', userController.registerUser)
+
+router.post('/login', userController.loginUser)
+
 export default router

@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "description": "Rest API Express backend application",
   "keywords": [],
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "repository": "https://github.com/samsoedien/smdn-project/tree/master/packages/server",
   "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
   "license": "MIT",
   "scripts": {
     "start": "nodemon",
-    "start:prod": "cross-env NODE_ENV=production & node dist/index.js",
+    "start:prod": "cross-env NODE_ENV=production & node dist/server.js",
     "build": "tsc"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/compression": "^1.7.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.9",
