@@ -21,6 +21,7 @@
     "server": "yarn lerna run start --stream --scope @smdn-project/server",
     "client": "yarn lerna run start --stream --scope @smdn-project/client",
     "desktop": "yarn lerna run start --stream --scope @smdn-project/desktop",
+    "sandbox": "yarn lerna run start --stream --scope @smdn-project/sandbox",
     "native": "expo start",
     "native:android": "expo start --android",
     "native:ios": "expo start --ios",
@@ -36,7 +37,9 @@
     "lint:styles": "stylelint ./packages/**/*.{css,scss,tsx}",
     "docker": "docker-compose up",
     "postinstall": "expo-yarn-workspaces check-workspace-dependencies",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "yarn lerna run storybook --stream",
+    "test": "yarn lerna run test --stream"
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",

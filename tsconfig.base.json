@@ -39,9 +39,9 @@
     },
     {
       "path": "packages/common"
-    }
+    },
     {
-      "path": "packages/next"
+      "path": "packages/sandbox"
     }
   ]
 }
