@@ -1,23 +1,41 @@
 {
   "name": "@smdn-project/client",
   "version": "0.1.0",
-  "private": true,
+  "description": "React frontend application",
+  "keywords": [],
+  "repository": "https://github.com/samsoedien/smdn-project/tree/master/packages/client",
+  "author": "Nathan Samsoedien <contact@samsoedien.com> (https://samsoedien.com)",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "next": "12.0.2",
+    "@reduxjs/toolkit": "^1.6.2",
+    "@smdn-project/common": "0.1.0",
+    "next": "12.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
     "@types/node": "16.11.6",
     "@types/react": "17.0.34",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
     "eslint": "7.32.0",
-    "eslint-config-next": "12.0.2",
+    "eslint-config-next": "12.0.3",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19",
     "typescript": "4.4.4"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
