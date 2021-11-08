@@ -1,20 +1,15 @@
-import { configureStore, combineReducers, getDefaultMiddleware } from '@reduxjs/toolkit'
-import logger from 'redux-logger'
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import counterReducer from '../app/features/counter/counterSlice'
 
-import productsSlice from './products/productsSlice'
-// import postsSlice from './posts/postsSlice'
-// import formsSlice from './formsSlice'
-
-const rootReducer = combineReducers({
-  products: productsSlice,
-  // posts: postsSlice,
-  // forms: formsSlice,
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
 })
 
-export default configureStore({
-  reducer: rootReducer,
-  middleware: [...getDefaultMiddleware(), logger],
-  devTools: process.env.NODE_ENV !== 'production',
-})
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
 
-export type RootState = ReturnType<typeof rootReducer>
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>
