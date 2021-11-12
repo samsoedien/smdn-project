@@ -32,7 +32,7 @@ const connectDB = async () => {
     await mongoose.connect(mongoConfig.uri, mongoConfig.options)
     console.info(`Connected to MongoDB`)
   } catch (err) {
-    console.error(err.message)
+    if (err instanceof Error) console.error(err.message)
     process.exit(1)
   }
 }

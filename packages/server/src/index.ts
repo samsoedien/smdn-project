@@ -2,7 +2,7 @@ import http from 'http'
 import dotenv from 'dotenv'
 
 import app from './api/app'
-import connectDB from './config/mongoDB'
+// import connectDB from './config/mongoDB'
 
 dotenv.config()
 
@@ -11,7 +11,7 @@ const server = http.createServer(app)
 
 server
   .listen(PORT, () => {
-    connectDB()
+    // connectDB()
     console.info(`Server running at http://localhost:${PORT}`)
   })
   .on('error', console.error)

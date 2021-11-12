@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Provider } from 'react-redux'
 import styles from './app.module.scss'
 
@@ -11,16 +13,14 @@ export interface IAppState {
 }
 export interface IAppProps {}
 
-const App: React.FC<IAppProps> = () => {
-  return (
-    <Provider store={store}>
-      <div className={styles['App']}>
-        <h1>React App</h1>
-        <Counter />
-      </div>
-    </Provider>
-  )
-}
+const App: React.FC<IAppProps> = () => (
+  <Provider store={store}>
+    <div className={styles['App']}>
+      <h1>React App</h1>
+      <Counter />
+    </div>
+  </Provider>
+)
 
 App.propTypes = {}
 
