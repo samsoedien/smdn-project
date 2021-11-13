@@ -11026,7 +11026,7 @@ eslint-config-airbnb@^18.2.1:
     object.assign "^4.1.2"
     object.entries "^1.1.2"
 
-eslint-config-next@12.0.3:
+eslint-config-next@12.0.3, eslint-config-next@^12.0.3:
   version "12.0.3"
   resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-12.0.3.tgz#a85ad423997f098b41b61c279472e0642e200a9e"
   integrity sha512-q+mX6jhk3HrCo39G18MLhiC6f8zJnTA00f30RSuVUWsv45SQUm6r62oXVqrbAgMEybe0yx/GDRvfA6LvSolw6Q==
@@ -11131,6 +11131,11 @@ eslint-plugin-jsx-a11y@^6.3.1, eslint-plugin-jsx-a11y@^6.4.1:
     has "^1.0.3"
     jsx-ast-utils "^3.1.0"
     language-tags "^1.0.5"
+
+eslint-plugin-next@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-next/-/eslint-plugin-next-0.0.0.tgz#f9ef680e8f68763c716ab44697c4b3cc3e0b2069"
+  integrity sha512-IldNDVb6WNduggwRbYzSGZhaskUwVecJ6fhmqwX01+S1aohwAWNzU4me6y47DDzpD/g0fdayNBGxEdt9vKkUtg==
 
 eslint-plugin-prettier@^4.0.0:
   version "4.0.0"

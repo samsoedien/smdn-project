@@ -5,7 +5,8 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "extends": ["next", "plugin:react/recommended", "airbnb", "prettier"],
+
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -27,6 +28,7 @@
         "tsx": "never"
       }
     ],
+    "import/prefer-default-export": "warn",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx", ".jsx"] }],
     "react/style-prop-object": "warn",
     "react/jsx-props-no-spreading": "warn",
@@ -39,6 +41,9 @@
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
+    },
+    "next": {
+      "rootDir": "/packages/client/"
     }
   }
 }
