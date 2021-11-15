@@ -5,12 +5,8 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
+  "extends": ["next", "plugin:react/recommended", "airbnb", "prettier"],
+
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -19,11 +15,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "no-unused-vars": "warn",
     "import/extensions": [
@@ -36,18 +28,22 @@
         "tsx": "never"
       }
     ],
-    "react/jsx-filename-extension":"warn",
-    "react/style-prop-object" :"warn",
+    "import/prefer-default-export": "warn",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx", ".jsx"] }],
+    "react/style-prop-object": "warn",
+    "react/jsx-props-no-spreading": "warn",
     "no-use-before-define": "off",
+    "dot-notation": "warn",
     "@typescript-eslint/no-use-before-define": ["warn"]
-
-
   },
   "settings": {
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
+    },
+    "next": {
+      "rootDir": "/packages/client/"
     }
   }
 }
