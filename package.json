@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "yarn lerna run start --stream",
-    "server": "yarn lerna run start --stream --scope @smdn-project/server",
+    "server": "yarn lerna run dev --stream --scope @smdn-project/server",
     "client": "yarn lerna run dev --stream --scope @smdn-project/client",
     "desktop": "yarn lerna run start --stream --scope @smdn-project/desktop",
     "sandbox": "yarn lerna run start --stream --scope @smdn-project/sandbox",
@@ -26,7 +26,7 @@
     "native:android": "expo start --android",
     "native:ios": "expo start --ios",
     "native:web": "expo web",
-    "dev": "concurrently \"yarn client\" \"yarn server\"",
+    "dev": "yarn lerna run dev --stream ",
     "next": "yarn lerna run start --stream --scope @smdn-project/next",
     "bootstrap": "yarn lerna bootstrap",
     "build": "yarn lerna run build --stream",

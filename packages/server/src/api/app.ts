@@ -11,7 +11,7 @@ import rateLimit from 'express-rate-limit'
 import xss from 'xss-clean'
 import cookieparser from 'cookie-parser'
 
-// import authRoutes from './routes/auth.route'
+import authRoutes from './routes/auth.route'
 import userRoutes from './routes/users.route'
 import productRoutes from './routes/products.route'
 import errorMiddleware from './middleware/error.middleware'
@@ -51,7 +51,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req: Request, res: Response) => res.send('Rest API Running.'))
 
-// app.use('/api/v1/auth', authRoutes)
+app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/users', userRoutes)
 app.use('/api/v1/products', productRoutes)
 app.use(errorMiddleware)
