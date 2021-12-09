@@ -17,7 +17,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "@smdn-project/common": "0.1.0",
-    "next": "12.0.3",
+    "next": "12.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "^7.2.6"
