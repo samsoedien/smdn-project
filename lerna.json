@@ -2,7 +2,14 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.1.0",
+  "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "allowBranch": "main",
+      "conventionalCommits": true
+    }
+  },
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
