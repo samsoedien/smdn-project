@@ -27,6 +27,7 @@
     "native:ios": "expo start --ios",
     "native:web": "expo web",
     "dev": "concurrently \"yarn client\" \"yarn server\"",
+    "dev:mfe": "yarn lerna run dev --stream --scope @smdn-project/mfe-authentication",
     "next": "yarn lerna run start --stream --scope @smdn-project/next",
     "bootstrap": "yarn lerna bootstrap",
     "build": "yarn lerna run build --stream",
@@ -83,5 +84,6 @@
     "./packages/**/*.{js,jsx,ts,tsx}": [
       "yarn --silent lint:scripts --fix"
     ]
-  }
+  },
+  "dependencies": {}
 }
